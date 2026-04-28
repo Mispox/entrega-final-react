@@ -1,0 +1,5 @@
+.count-container {
+  margin: 2rem;
+  display: flex;
+  gap: 2rem;
+}

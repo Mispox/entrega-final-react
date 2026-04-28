@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Nuestra Parte de Noche",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 12500,
+    "image": "/img/noche.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Alguien camina sobre tu tumba",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 12500,
+    "image": "/img/alguien.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Porque demasiado no es suficiente",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 28900,
+    "image": "/img/demasiado.webp"
+  },
+  {
+    "id": 4,
+    "name": "Los peligros de fumar en la cama",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 35000,
+    "image": "/img/fumar.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Las cosas que perdimos en el fuego",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 42000,
+    "image": "/img/fuego.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Como desaparecer completamente",
+    "description": "Libro de la autora Mariana Enriquez",
+    "price": 45500,
+    "image": "/img/desaparecer.jpeg"
+  }
+]

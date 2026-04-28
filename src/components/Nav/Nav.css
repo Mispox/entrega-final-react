@@ -1,0 +1,18 @@
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-list li {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-list li:hover {
+  color: #e94560;
+}
+nav {
+  background-color: transparent; 
+}

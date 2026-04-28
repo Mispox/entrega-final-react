@@ -1,0 +1,14 @@
+header {
+  background: linear-gradient(to right, #8b0000, #1a1a1a);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}

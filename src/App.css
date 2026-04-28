@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', serif;
+  background-color: #111111;
+  color: #e0e0e0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+main h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #8b0000;
+  letter-spacing: 4px;
+}
+
+main p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+}
+body {
+  background-image: url('/img/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #111111;
+}
+.hero-wrapper {
+  max-width: 1100px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
