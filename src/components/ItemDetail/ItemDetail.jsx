@@ -3,12 +3,11 @@ import { useCart } from "../../context/CartContext";
 import "./ItemDetail.css";
 
 export const ItemDetail = ({ id, name, description, longDescription, price, image }) => {
-  const [cantidad, setCantidad] = useState(1);
-  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const { addItem } = useCart();
 
-  const handleAddToCart = () => {
-    addToCart({ id, name, description, price, image }, cantidad);
-    alert(`Agregaste ${cantidad} unidad/es de "${name}" al carrito.`);
+  const handleAdd = () => {
+    addItem({ id, name, price, image }, quantity);
   };
 
   return (
@@ -18,19 +17,18 @@ export const ItemDetail = ({ id, name, description, longDescription, price, imag
       </div>
       <div className="detail-info">
         <h2>{name}</h2>
-        <p className="detail-description">{longDescription || description}</p>
-        <p className="detail-price">${price.toLocaleString()}</p>
-
+        <p className="detail-description">{description}</p>
+        <p className="detail-description">{longDescription}</p>
+        <p className="detail-price">${price}</p>
         <div className="detail-quantity">
           <span>CANTIDAD</span>
           <div className="quantity-controls">
-            <button onClick={() => setCantidad(c => Math.max(1, c - 1))}>−</button>
-            <span>{cantidad}</span>
-            <button onClick={() => setCantidad(c => c + 1)}>+</button>
+            <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(q => q + 1)}>+</button>
           </div>
         </div>
-
-        <button className="detail-btn" onClick={handleAddToCart}>
+        <button className="detail-btn" onClick={handleAdd}>
           Agregar al carrito
         </button>
       </div>

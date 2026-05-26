@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
-import { db } from "../../Firebase/config";
-import { collection, getDocs } from "firebase/firestore";
+import { getProducts } from "../../services/productsService";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productosRef = collection(db, "productos");
-    getDocs(productosRef)
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProducts(data);
-      });
+
+    getProducts()
+      .then((data) => setProducts(data))
+      .catch((err) => console.log("Hubo un error:", err))
+      .finally(() => setLoading(false));
   }, []);
+
+  if (loading) return <p>Cargando...</p>;
 
   return (
     <section>
