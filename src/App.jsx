@@ -5,12 +5,15 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Hero } from "./components/Hero/Hero";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import { SpotifyPlayer } from "./components/SpotifyPlayer/SpotifyPlayer";
 import './index.css'
 import { Gestion } from "./components/Gestion/Gestion";
+
 function App() {
+  const location = useLocation();
+
   return (
     <>
       <Header />
@@ -32,7 +35,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-       <SpotifyPlayer />
+      {location.pathname !== "/admin" && <SpotifyPlayer />}
     </>
   );
 }

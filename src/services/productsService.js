@@ -5,6 +5,7 @@ import {
   doc,
   deleteDoc,
   addDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase/config";
 
@@ -53,5 +54,13 @@ export const addProduct = async (product) => {
     return docRef.id;
   } catch (error) {
     console.error("Error al agregar producto:", error);
+  }
+};
+export const updateProduct = async (id, updatedData) => {
+  try {
+    const productRef = doc(db, "productos", id);
+    await updateDoc(productRef, updatedData);
+  } catch (error) {
+    console.error("Error al actualizar producto:", error);
   }
 };

@@ -82,6 +82,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   padding: 0.8rem 1rem;
+  gap: 1rem;
 }
 
 .gestion-list li span {
@@ -102,4 +103,8 @@
 
 .gestion-list li button:hover {
   background-color: #ff0000;
+}
+.gestion-list li div {
+  display: flex;
+  gap: 0.5rem;
 }
