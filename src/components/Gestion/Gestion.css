@@ -1,0 +1,105 @@
+.gestion-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.gestion-container h1 {
+  text-align: center;
+  color: #8b0000;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gestion-container h2 {
+  color: #ff6b00;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.gestion-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gestion-form input {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.gestion-form input::placeholder {
+  color: #aaaaaa;
+}
+
+.gestion-form input:focus {
+  outline: none;
+  border-color: #ff6b00;
+}
+
+.gestion-form button {
+  grid-column: span 2;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+}
+
+.gestion-form button:hover {
+  background-color: #8b0000;
+}
+
+.gestion-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.gestion-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+}
+
+.gestion-list li span {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.gestion-list li button {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+}
+
+.gestion-list li button:hover {
+  background-color: #ff0000;
+}

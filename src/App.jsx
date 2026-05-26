@@ -9,12 +9,14 @@ import { Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import { SpotifyPlayer } from "./components/SpotifyPlayer/SpotifyPlayer";
 import './index.css'
+import { Gestion } from "./components/Gestion/Gestion";
 function App() {
   return (
     <>
       <Header />
       <main>
         <Routes>
+          <Route path="/admin" element={<Gestion />} />
           <Route path="/" element={
             <>
               <div className="hero-wrapper">

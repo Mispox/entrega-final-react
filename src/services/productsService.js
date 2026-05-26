@@ -3,12 +3,13 @@ import {
   getDocs,
   getDoc,
   doc,
+  deleteDoc,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase/config";
 
 const productosRef = collection(db, "productos");
 
-/* ---- GET ALL ---- */
 export const getProducts = async () => {
   try {
     const snapshot = await getDocs(productosRef);
@@ -23,7 +24,7 @@ export const getProducts = async () => {
   }
 };
 
-/* ---- GET BY ID ---- */
+
 export const getProductById = async (id) => {
   try {
     const productRef = doc(db, "productos", id);
@@ -36,5 +37,21 @@ export const getProductById = async (id) => {
   } catch (error) {
     console.error("Error al traer producto por ID:", error);
     return null;
+  }
+};
+export const deleteProduct = async (id) => {
+  try {
+    const productRef = doc(db, "productos", id);
+    await deleteDoc(productRef);
+  } catch (error) {
+    console.error("Error al eliminar producto:", error);
+  }
+};
+export const addProduct = async (product) => {
+  try {
+    const docRef = await addDoc(productosRef, product);
+    return docRef.id;
+  } catch (error) {
+    console.error("Error al agregar producto:", error);
   }
 };
