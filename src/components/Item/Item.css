@@ -38,18 +38,26 @@
   font-weight: 700;
   font-size: 1.2rem;
 }
-button {
-  background-color: #ff6b00;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  width: 100%;
+.card button {
+  background-color: #ff6b00 !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.8rem 1.5rem !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 1rem !important;
+  letter-spacing: 2px !important;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+  transition: background-color 0.3s !important;
+  width: 100% !important;
+}
+
+.card button:hover {
+  background-color: #8b0000 !important;
+}
+
+.card button:hover {
+  background-color: #8b0000;
 }
 
 button:hover {

@@ -12,43 +12,28 @@ export const ProductFormUI = ({
         <h2>Agregar nuevo producto</h2>
         <div>
           <label>Nombre:</label>
-          <input
-            type="text"
-            name="name"
-            value={product.name}
-            onChange={onChange}
-          />
+          <input type="text" name="name" value={product.name} onChange={onChange} />
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
         <div>
           <label>Precio:</label>
-          <input
-            type="number"
-            name="price"
-            value={product.price}
-            onChange={onChange}
-            min="0"
-          />
+          <input type="number" name="price" value={product.price} onChange={onChange} min="0" />
           {errors.price && <p className="error">{errors.price}</p>}
         </div>
         <div>
           <label>Categoría:</label>
-          <input
-            type="text"
-            name="category"
-            value={product.category}
-            onChange={onChange}
-          />
+          <input type="text" name="category" value={product.category} onChange={onChange} />
           {errors.category && <p className="error">{errors.category}</p>}
         </div>
         <div>
           <label>Descripción:</label>
-          <textarea
-            name="description"
-            value={product.description}
-            onChange={onChange}
-          />
+          <textarea name="description" value={product.description} onChange={onChange} />
           {errors.description && <p className="error">{errors.description}</p>}
+        </div>
+        <div>
+          <label>Descripción larga:</label>
+          <textarea name="longDescription" value={product.longDescription} onChange={onChange} />
+          {errors.longDescription && <p className="error">{errors.longDescription}</p>}
         </div>
         <div>
           <label>Imagen:</label>
