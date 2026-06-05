@@ -9,7 +9,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import { SpotifyPlayer } from "./components/SpotifyPlayer/SpotifyPlayer";
 import './index.css'
-import { Gestion } from "./components/Gestion/Gestion";
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer";
+import { ProductSuccess } from "./components/adminComponents/ProductSuccess";
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,8 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/admin" element={<Gestion />} />
+          <Route path="/admin" element={<ProductFormContainer />} />
+          <Route path="/success/:id" element={<ProductSuccess />} />
           <Route path="/" element={
             <>
               <div className="hero-wrapper">

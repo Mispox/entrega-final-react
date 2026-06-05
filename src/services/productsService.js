@@ -64,3 +64,12 @@ export const updateProduct = async (id, updatedData) => {
     console.error("Error al actualizar producto:", error);
   }
 };
+export const createProduct = async (product) => {
+  try {
+    const docRef = await addDoc(productosRef, product);
+    return docRef.id;
+  } catch (error) {
+    console.error("Error al crear producto:", error);
+    throw error;
+  }
+};
