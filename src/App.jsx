@@ -11,6 +11,9 @@ import { SpotifyPlayer } from "./components/SpotifyPlayer/SpotifyPlayer";
 import './index.css'
 import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer";
 import { ProductSuccess } from "./components/adminComponents/ProductSuccess";
+import { Login } from "./components/Login/Login";
+import { Registro } from "./components/Registro/Registro";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   const location = useLocation();
@@ -20,8 +23,18 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/admin" element={<ProductFormContainer />} />
-          <Route path="/success/:id" element={<ProductSuccess />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/admin" element={
+            <ProtectedRoute rolesPermitidos={['admin']}>
+              <ProductFormContainer />
+            </ProtectedRoute>
+          } />
+          <Route path="/success/:id" element={
+            <ProtectedRoute rolesPermitidos={['admin']}>
+              <ProductSuccess />
+            </ProtectedRoute>
+          } />
           <Route path="/" element={
             <>
               <div className="hero-wrapper">

@@ -38,3 +38,23 @@ nav {
   text-align: center;
   line-height: 1.2;
 }
+.user-email {
+  color: #aaaaaa;
+  font-size: 0.85rem;
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid #ff6b00;
+  color: #ff6b00;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #ff6b00;
+  color: white;
+}

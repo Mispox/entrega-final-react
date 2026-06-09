@@ -1,0 +1,82 @@
+.auth-container {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.auth-container h2 {
+  text-align: center;
+  color: #8b0000;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  padding: 0.7rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #ff6b00;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+}
+
+.auth-container button:hover {
+  background-color: #8b0000;
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #aaaaaa;
+}
+
+.auth-container a {
+  color: #ff6b00;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  color: #8b0000;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.85rem;
+  text-align: center;
+}
