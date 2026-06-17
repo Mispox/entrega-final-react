@@ -29,20 +29,35 @@ main p {
   color: #666;
   line-height: 1.7;
 }
+
 body {
   background-image: url('/img/fondo.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll; /* ← era fixed, no funciona en mobile */
   background-color: #111111;
 }
+
 .hero-wrapper {
   max-width: 1100px;
   margin: 2rem auto;
   border-radius: 16px;
   overflow: hidden;
 }
+
 a {
   text-decoration: none;
   color: inherit;
+}
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .hero-wrapper {
+    margin: 0;
+    border-radius: 0;
+  }
 }

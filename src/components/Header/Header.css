@@ -4,28 +4,22 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  color: white;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+
 .logo-container span {
   font-family: 'Cinzel', serif;
   font-size: 1.5rem;
   letter-spacing: 2px;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .logo-text {
@@ -47,11 +41,17 @@ header {
   letter-spacing: 6px;
   color: #cccccc;
 }
+
 @media (max-width: 768px) {
   header {
-    padding: 1rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  header img {
+    width: 30px;
+    height: 25px;
   }
 
   .logo-top {
@@ -62,11 +62,5 @@ header {
   .logo-bottom {
     font-size: 0.7rem;
     letter-spacing: 4px;
-  }
-}
-@media (max-width: 768px) {
-  header img {
-    width: 30px;
-    height: 25px;
   }
 }

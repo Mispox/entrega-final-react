@@ -98,9 +98,10 @@
 .detail-btn:hover {
   background-color: #c44d00;
 }
+
 @media (max-width: 768px) {
   .detail-container {
-    display: block !important;
+    flex-direction: column; /* ← en vez de display: block !important */
     padding: 1rem;
     margin: 0.5rem;
   }

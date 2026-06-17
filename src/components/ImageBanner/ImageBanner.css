@@ -36,3 +36,13 @@
     width: 100%;
   }
 }
+.banner-container {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #000;
+  box-sizing: border-box;
+}
