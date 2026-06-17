@@ -17,16 +17,18 @@ export const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await login(formData.email, formData.password);
-      console.log("Login exitoso");
+  e.preventDefault();
+  try {
+    await login(formData.email, formData.password);
+    console.log("Login exitoso");
+    setTimeout(() => {
       navigate("/admin", { replace: true });
-    } catch (error) {
-      console.error(error);
-      alert("Error al iniciar sesión");
-    }
+    }, 500);
+  } catch (error) {
+    console.error(error);
+    alert("Error al iniciar sesión");
   }
+}
 
   return (
     <form onSubmit={handleSubmit} className="login-form">
