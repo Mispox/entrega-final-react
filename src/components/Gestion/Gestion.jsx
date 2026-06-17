@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts, deleteProduct, addProduct, updateProduct } from "../../services/productsService";
+import { uploadImage } from "../../services/uploadImage";
 import "./Gestion.css";
 
 export const Gestion = () => {
@@ -13,6 +14,7 @@ export const Gestion = () => {
     category: "",
   });
   const [editingProduct, setEditingProduct] = useState(null);
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     getProducts().then((data) => setProducts(data));
@@ -37,21 +39,28 @@ export const Gestion = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const productToAdd = {
-      ...newProduct,
-      price: Number(newProduct.price),
-    };
-    const id = await addProduct(productToAdd);
-    setProducts([...products, { id, ...productToAdd }]);
-    setNewProduct({
-      name: "",
-      description: "",
-      longDescription: "",
-      price: "",
-      image: "",
-      category: "",
-    });
-    alert("Producto agregado.");
+    try {
+      const imageUrl = file ? await uploadImage(file) : newProduct.image;
+      const productToAdd = {
+        ...newProduct,
+        price: Number(newProduct.price),
+        image: imageUrl,
+      };
+      const id = await addProduct(productToAdd);
+      setProducts([...products, { id, ...productToAdd }]);
+      setNewProduct({
+        name: "",
+        description: "",
+        longDescription: "",
+        price: "",
+        image: "",
+        category: "",
+      });
+      setFile(null);
+      alert("Producto agregado.");
+    } catch (error) {
+      alert("Error al agregar producto.");
+    }
   };
 
   const handleEditSubmit = async (e) => {
@@ -74,7 +83,7 @@ export const Gestion = () => {
         <input name="description" placeholder="Descripción corta" value={newProduct.description} onChange={handleChange} required />
         <input name="longDescription" placeholder="Descripción larga" value={newProduct.longDescription} onChange={handleChange} />
         <input name="price" placeholder="Precio" type="number" value={newProduct.price} onChange={handleChange} required />
-        <input name="image" placeholder="Ruta de imagen (/img/libro.jpg)" value={newProduct.image} onChange={handleChange} />
+        <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0] || null)} />
         <input name="category" placeholder="Categoría" value={newProduct.category} onChange={handleChange} />
         <button type="submit">Agregar</button>
       </form>

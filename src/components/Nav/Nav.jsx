@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const Nav = () => {
-  const { getCartQuantity } = useCart();
+  const { getCartQuantity, cart } = useCart();
   const { user, logout } = useAuth();
   const totalItems = getCartQuantity();
   const navigate = useNavigate();

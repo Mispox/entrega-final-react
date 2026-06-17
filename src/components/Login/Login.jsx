@@ -1,54 +1,57 @@
-import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
-import './Login.css';
+import { useState } from "react"
+import { useAuth } from "../../context/AuthContext"
+import { useNavigate } from "react-router-dom"
+import "./Login.css"
 
 export const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const { login } = useAuth();
-  const navigate = useNavigate();
+  const { login } = useAuth()
+  const navigate = useNavigate()
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  })
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError(null);
-    try {
-      await login(email, password);
-      navigate('/');
-    } catch (error) {
-      setError("Email o contraseña incorrectos");
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(formData.email, formData.password);
+      console.log("Login exitoso");
+      navigate("/admin", { replace: true });
+    } catch (error) {
+      console.error(error);
+      alert("Error al iniciar sesión");
+    }
+  }
+
   return (
-    <section className="auth-container">
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin}>
-        <div className="form-group">
-          <label>Correo electrónico</label>
-          <input
-            type="email"
-            placeholder="Correo electrónico"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Contraseña</label>
-          <input
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p className="error">{error}</p>}
-        <button type="submit">Ingresar</button>
-        <p>¿No tenés una cuenta? <Link to="/registro">Registrate aquí</Link></p>
-      </form>
-    </section>
+    <form onSubmit={handleSubmit} className="login-form">
+      <h2>Iniciar sesión</h2>
+      <div className="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </div>
+      <button type="submit">Login</button>
+    </form>
   );
-};
+}

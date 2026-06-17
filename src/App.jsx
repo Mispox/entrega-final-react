@@ -9,11 +9,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import { SpotifyPlayer } from "./components/SpotifyPlayer/SpotifyPlayer";
 import './index.css'
-import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer";
 import { ProductSuccess } from "./components/adminComponents/ProductSuccess";
 import { Login } from "./components/Login/Login";
 import { Registro } from "./components/Registro/Registro";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { Gestion } from "./components/Gestion/Gestion";
 
 function App() {
   const location = useLocation();
@@ -27,7 +27,7 @@ function App() {
           <Route path="/registro" element={<Registro />} />
           <Route path="/admin" element={
             <ProtectedRoute rolesPermitidos={['admin']}>
-              <ProductFormContainer />
+              <Gestion />
             </ProtectedRoute>
           } />
           <Route path="/success/:id" element={

@@ -4,10 +4,10 @@ import "./ItemDetail.css";
 
 export const ItemDetail = ({ id, name, description, longDescription, price, image }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addItem } = useCart();
+  const { addToCart } = useCart();
 
   const handleAdd = () => {
-    addItem({ id, name, price, image }, quantity);
+    addToCart({ id, name, price, image }, quantity);
   };
 
   return (

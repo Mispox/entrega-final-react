@@ -1,4 +1,4 @@
-.auth-container {
+.login-form {
   max-width: 450px;
   margin: 3rem auto;
   padding: 2rem;
@@ -8,7 +8,7 @@
   color: #ffffff;
 }
 
-.auth-container h2 {
+.login-form h2 {
   text-align: center;
   color: #8b0000;
   font-size: 1.8rem;
@@ -41,7 +41,7 @@
   border-color: #ff6b00;
 }
 
-.auth-container button {
+.login-form button {
   width: 100%;
   padding: 0.8rem;
   background-color: #ff6b00;
@@ -56,23 +56,8 @@
   margin-top: 0.5rem;
 }
 
-.auth-container button:hover {
+.login-form button:hover {
   background-color: #8b0000;
-}
-
-.auth-container p {
-  text-align: center;
-  margin-top: 1rem;
-  color: #aaaaaa;
-}
-
-.auth-container a {
-  color: #ff6b00;
-  text-decoration: none;
-}
-
-.auth-container a:hover {
-  color: #8b0000;
 }
 
 .error {
