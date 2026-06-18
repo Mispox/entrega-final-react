@@ -101,14 +101,19 @@
 
 @media (max-width: 768px) {
   .detail-container {
-    flex-direction: column; /* ← en vez de display: block !important */
+    flex-direction: column;
     padding: 1rem;
     margin: 0.5rem;
   }
 
+  .detail-image {
+    display: flex;
+    justify-content: center;  
+  }
+
   .detail-image img {
-    width: 100%;
-    max-width: 280px;
+    width: 60%;               
+    max-width: 250px;
     margin: 0 auto;
     display: block;
   }
