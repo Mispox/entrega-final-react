@@ -40,6 +40,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #ff6b00;
+  color: white;
 }
 
 .cart-total {
@@ -68,6 +70,13 @@
   font-size: 1rem;
   border-radius: 4px;
   margin-top: 1rem;
+  background-color: #ff6b00;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn-vaciar:hover {
+  background-color: #8b0000;
 }
 
 .btn-home {
