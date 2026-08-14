@@ -5,7 +5,7 @@ E-commerce de libros de terror desarrollado con React. Pre-entrega del curso de 
  🔗 Links
 
 - **Sitio en vivo:** [bathory.vercel.app](https://bathory.vercel.app)
-- **Repositorio:** [github.com/Mispox/Pre-entrega-react](https://github.com/Mispox/Pre-entrega-react)
+- **Repositorio:** [github.com/Mispox/Pre-entrega-react](https://github.com/Mispox/entrega-final-react)
 
 🛠️ Tecnologías
 
