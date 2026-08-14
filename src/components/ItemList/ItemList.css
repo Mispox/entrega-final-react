@@ -4,7 +4,12 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: flex-start;
+}
+
+.products-container a {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 768px) {
