@@ -1,6 +1,6 @@
  📚 Bathory Books
 
-E-commerce de libros de terror desarrollado con React y Node.js
+E-commerce de libros de terror desarrollado con React
 
 
  🔗 Links
