@@ -1,6 +1,6 @@
  📚 Bathory Books
 
-E-commerce de libros de terror desarrollado con React. Pre-entrega del curso de React JS de Talento Tech.
+E-commerce de libros de terror desarrollado con React. 
 
  🔗 Links
 
